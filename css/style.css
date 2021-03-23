@@ -1,0 +1,460 @@
+/* General styles */
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: UniNeue-Bold;
+    src: url("../fonts/UniNeueBold.woff");
+}
+
+@font-face {
+    font-family: UniNeue-Regular;
+    src: url("../fonts/UniNeueRegular.woff");
+}
+
+@font-face {
+    font-family: UniNeue-Book;
+    src: url("../fonts/UniNeueBook.woff");
+}
+
+body {
+    background-color: #ecf6fa;
+    color: #4d5c68;
+    font-family: UniNeue-Bold;
+}
+
+html {
+    font-size: 16px;
+    overflow-y: scroll;
+}
+
+hr {
+    border: 1px solid #e7e7e7;
+    opacity: 0.5;
+}
+
+/* Container and main block styles */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px 0;
+}
+
+.main {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.inner {
+    padding: 2rem 3.5rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-right: -10px;
+    margin-left: -10px;
+}
+
+.flex-child {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.position-relative {
+    position: relative;
+}
+
+/* Typography styles*/
+
+p {
+    margin: 0 0 0.5rem 0;
+}
+
+h1 {
+    margin: 0.5rem 0;
+}
+
+/* Paddings and margins styles */
+
+.p-0 {
+    padding: 0!important;
+}
+
+.pt-0 {
+    padding-top: 0!important;
+}
+
+.m-0 {
+    margin: 0!important;
+}
+
+.mt-2 {
+    margin-top: 2rem!important;
+}
+
+.mb-2 {
+    margin-bottom: 2rem!important;
+}
+
+.mb-4 {
+    margin-bottom: 4rem!important;
+}
+
+/* Main content styles */
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.header {
+    text-align: center;
+}
+
+// SERVICES BLOCK + CUSTOM CHECKBOX STYLES
+// ---------------------------------------
+
+.services-block {
+    position: relative;
+    height: 130px;
+ }
+
+    .services-block .item {
+        text-align: center;
+        padding: 3rem 2rem 1.25rem;
+        margin: 10px;
+        border: 2px solid #e7e7e785;
+        border-radius: 10px;
+        overflow-wrap: break-word;
+        box-shadow: 0px 1px 0px 0px rgb(0 0 0 / 10%);
+        font-family: UniNeue-Regular;
+    }
+
+    .chosen {
+        background-color: #f7fafa;
+    }
+
+.custom-checkbox {
+    position: relative;
+    display: block;
+    cursor: pointer;
+ }
+
+    .custom-checkbox input {
+        position: absolute;
+        cursor: pointer;
+        opacity: 0;
+        height: 0;
+        width: 0;
+    }
+
+    .custom-checkbox .checkmark {
+        cursor: pointer;
+        position: absolute;
+        height: 1.75rem;
+        width: 1.75rem;
+        border: 2px solid #e7e7e7;
+        border-radius: 5px;
+        top: -2rem;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+    }
+
+    .custom-checkbox:hover input ~ .checkmark {
+        background-color: #f6f6f6;
+    }
+
+    .custom-checkbox input:checked ~ .checkmark {
+        background-color: #34b233;
+        border-color: #34b233;
+    }
+
+    .checkmark::after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .custom-checkbox input:checked ~ .checkmark::after {
+        display: block;
+    }
+
+    .custom-checkbox .checkmark::after {
+        left: 9px;
+        top: 3px;
+        width: 7px;
+        height: 14px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+// CALCULUS BLOCK STYLES
+// ------------------------------
+
+.slider-container {}
+
+div#slider {
+    width: 100%;
+    margin-top: 70px;
+    position: relative;
+ }
+
+    input[type="range"] {
+        -webkit-appearance: none;
+        -moz-apperance: none;
+        width: 100%;
+        border-radius: 10px;
+        height: 10px;
+        
+        background-image: -webkit-gradient(linear,
+            left top, 
+            right top, 
+            color-stop(32%, #34b233),
+            color-stop(32%, #ade0ad));
+        
+        background-image: -moz-linear-gradient(left center,
+            #34b233 0%, #34b233 32%,
+            #ade0ad 32%, #ade0ad 100%);
+    }
+
+    input[type="range"]::-moz-range-track {
+        border: none;
+        background: none;
+        outline: none;
+    }
+
+    input[type="range"]:focus {
+        outline: none;
+        border: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none !important;
+        background-color: #34b233;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        -moz-appearance: none !important;
+        background-color: #34b233;
+        border: none;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+
+    .range-value {
+        position: absolute;
+        top: -50px;
+    }
+
+    .range-value span{
+        width: 90px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        background: #34b233;
+        color: #fff;
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        border-radius: 100px;
+    }
+
+    .range-value span:before{
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 10px solid #34b233;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        margin-top: -1px;
+    }
+
+    .values {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 0.5rem;
+        font-family: UniNeue-Regular;
+    }
+
+.data-inputs span {
+    color: red
+}
+
+.custom-select,
+.custom-input input {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-family: UniNeue-Bold;
+    color: #4d5c68;
+  }
+
+  .custom-input input:focus,
+  .custom-input input:active {
+      outline: none;
+      }
+
+  .custom-select select {
+    display: none;
+    max-height: 200px;
+  }
+
+ .select-selected,
+ .custom-input input {
+    background-color: #f7fafa;
+  }
+
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 20px;
+    right: 16px;
+    border: solid #4d5c68;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+  .select-selected.select-arrow-active:after {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    top: 26px;
+  }
+
+  .select-items div,
+  .select-selected,
+  .custom-input input {
+    padding: 1rem;
+    border: 1px solid #b5babf;
+    cursor: pointer;
+    user-select: none;
+
+    -webkit-box-shadow: 0px 1px 0px 0px rgba(106,110,115,1);
+    -moz-box-shadow: 0px 1px 0px 0px rgba(106,110,115,1);
+    box-shadow: 0px 1px 0px 0px rgba(106,110,115,1);
+  }
+
+  .select-items {
+    position: absolute;
+    background-color: #f7fafa;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    height: calc(55.6px * 3);
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .select-hide {
+    display: none;
+  }
+
+  .select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+
+#calcTable {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  #calcTable tr:nth-child(even) {
+      background-color: #f7fafa;
+    }
+
+    #calcTable tr td:nth-child(1) {
+        font-family: UniNeue-Regular
+    }
+
+    #calcTable tr td:nth-child(2) {
+        float: right;
+    }
+
+    #calcTable tr:first-child td {
+        padding-top: 0;
+    }
+
+    #calcTable tr:last-child {
+        background-color: #ecf6fa;
+        line-height: 1.5rem;
+    }
+
+    #calcTable tr:last-child td:first-child {
+        font-family: UniNeue-Bold;
+    }
+
+    #calcTable tr:last-child td:nth-child(2) {
+        font-size: 1.25rem;
+        color: #34b233;
+    }
+
+    #calcTable td {
+        padding: 1rem 0.75rem;
+    }
+
+
+.center {    
+    position: relative;
+    width: 250px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.custom-button {
+    width: 250px;
+    color: #fff;
+    background-color: #34b233;
+    padding: 0.75rem 1rem;
+    border-color: transparent;
+    border-radius: 50px;
+    font-size: 1.25rem;
+    font-family: UniNeue-Bold;
+    cursor: pointer;
+    }
+
+    .custom-button:hover {
+        background-color: #32a831;
+    }
+
+    .custom-button:focus {
+        outline: none
+    }
+
+    .arrow {
+        position: absolute;
+        top: 45%;
+        right: 15%;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 4px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+
+
+
+
