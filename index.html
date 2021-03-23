@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Kalkulaator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=np">
+        <link rel="stylesheet" href="css/style.css">      
+    </head>
+<body>
+    <div class="container">
+        <main role="main" class="main mt-2">
+            <div class="inner" style="margin-bottom: 7rem;">
+                <div class="section header">
+                    <h1>Kuumaksete kalkulaator</h1>
+                </div>
+                <div class="section services">
+                    <div class="subtitle">Teenus:</div>
+                    <div class="services-block row" id="services">
+                        <div class="item chosen" id="service1">
+                            <p></p>
+                            <label class="custom-checkbox">Päikesepaneelid
+                                <input type="checkbox" checked/>
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="item" id="service2">
+                            <p></p>
+                            <label class="custom-checkbox">Soojuspump
+                                <input type="checkbox"  />
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="item" id="service3">
+                            <label class="custom-checkbox">Elektritööd või gaasitööd
+                                <input type="checkbox"  />
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="item" id="service4">
+                            <label class="custom-checkbox">Off-Grid võrguvaba elekter
+                                <input type="checkbox"  />
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="item" id="service5">
+                            <label class="custom-checkbox">Elektriautode laadimislahendused
+                                <input type="checkbox"  />
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <hr/>
+                <div class="section calculus mt-2">
+                    <div class="calculus-block row">
+                        <div class="flex-child">
+                            <div class="subtitle">Summa:</div>
+                            <div class="slider-container position-relative" id="slider">
+                                <div class="range-value" id="rangeV"></div>
+                                <input type="range" id="range" min="300" max="25000" value="5000" />
+                                <div class="values mb-2">
+                                    <span>300 &euro;</span>
+                                    <span>25 000 &euro;</span>
+                                </div>
+                                <hr/>
+                            </div>
+                            <div class="data-inputs row mt-2">
+                                <div class="flex-child" style="margin-top: 10px;">Periood: <span>&#42</span>
+                                    <div class="custom-select">
+                                        <select name="months" id="defaultDropdown">
+                                            <option selected>60 kuud</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="flex-child" style="margin-top: 10px;">Sissemakse (eur): <span>&#42</span>
+                                    <div class="custom-input">
+                                        <input value="-" type="text" id="sissemakse" onkeyup = "UpdateMaksumusAndKuumakse()"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-child">
+                            <table id="calcTable">
+                                  <tr>
+                                    <td >Intress</td>
+                                    <td id="intress">7.90 &percnt;</td>
+                                  </tr>
+                                  <tr>
+                                    <td >Lepingutasu</td>
+                                    <td id="leping">0 &euro;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Igakuine haldustasu</td>
+                                    <td id="haldus">0 &euro;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Periood</td>
+                                    <td id="periood">60 kuud</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Projekti maksumus</td>
+                                    <td id="maksumus">20 184 &euro;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Kuumakse</td>
+                                    <td id="kuumakse">80.00 &euro;</td>
+                                  </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <form method="POST" class="mb-2">
+                    <div class="center">
+                        <input type="submit" value="Esitan taotluse" id="esita" class="custom-button" />
+                        <span class="arrow"></span>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+    </div>
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
